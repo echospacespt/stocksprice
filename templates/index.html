@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Escolher ETFs</title>
+</head>
+<body>
+    <h1>Dashboard de ETFs</h1>
+
+    <form method="POST">
+
+        <h3>Selecione os ETFs:</h3>
+
+        {% for ticker, desc in etf_info.items() %}
+            <label>
+                <input type="checkbox" name="etfs" value="{{ ticker }}">
+                {{ ticker }} — {{ desc }}
+            </label>
+            <br>
+        {% endfor %}
+
+        <br><br>
+
+        <h3>Selecione o período:</h3>
+        <select name="periodo">
+            {% for label, value in periodos.items() %}
+                <option value="{{ label }}">{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <button type="submit">Gerar Dashboard</button>
+
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+
+    </form>
+
+    <br><br>
+    <a href="{{ url_for('adicionar_etf') }}">Adicionar novo ETF</a>
+
+</body>
+</html>
+

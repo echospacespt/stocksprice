@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de ETFs</title>
+</head>
+<body>
+    <h1>Dashboard de ETFs</h1>
+
+    <h3>ETFs selecionados:</h3>
+    <ul>
+        {% for ticker in etfs %}
+            <li>{{ ticker }} — {{ etf_info[ticker] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Período selecionado: {{ periodo }}</h3>
+
+    <h2>Comparação de Preços</h2>
+    <img src="/static/comparacao_precos.png" width="900">
+
+    <h2>Retorno Percentual</h2>
+    <img src="/static/comparacao_retornos.png" width="900">
+
+    <br><br>
+    <a href="/">Voltar</a>
+</body>
+</html>
+

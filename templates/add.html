@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar ETF</title>
+</head>
+<body>
+    <h1>Adicionar novo ETF</h1>
+
+    <form method="POST">
+        <label>Ticker:</label><br>
+        <input type="text" name="ticker"><br><br>
+
+        <label>Descrição:</label><br>
+        <input type="text" name="descricao" size="60"><br><br>
+
+        <button type="submit">Adicionar</button>
+
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+
+        {% if sucesso %}
+            <p style="color:green;">{{ sucesso }}</p>
+        {% endif %}
+    </form>
+
+    <br><br>
+    <a href="/">Voltar</a>
+
+</body>
+</html>
+
