@@ -1,6 +1,6 @@
 flask
 yfinance
 pandas
-matplotlib.pyplot
+matplotlib
 os
 json
