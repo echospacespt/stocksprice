@@ -2,5 +2,4 @@ flask
 yfinance
 pandas
 matplotlib
-os
 json
